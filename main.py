@@ -154,7 +154,7 @@ class InstagramBot():
             for tag in tag_list:
                 self.search(tag,is_tag = True)
                 self.like_results(np.random.randint(17,25))
-            nonidle_break(np.random.randtint(378,798))
+            self.nonidle_break(np.random.randtint(378,798))
 
 
     #presses the home button
