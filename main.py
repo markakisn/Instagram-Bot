@@ -80,7 +80,7 @@ class InstagramBot():
     def like_media(self):
         like_btn = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
-            (By.XPATH, "//button[@class='dCJp8 afkep _0mzm-']")
+            (By.XPATH, "//button[@class='dCJp8 afkep']")
             )
         )
         like_btn.click()
