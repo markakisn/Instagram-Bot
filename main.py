@@ -157,6 +157,7 @@ class InstagramBot():
                     self.like_results(np.random.randint(17,25))                    
                     self.nonidle_break(np.random.randtint(378,798))
                 except:
+                    self.back_from_media()
                     self.go_home()
                     time.sleep(np.random.randint(4,7))
                     print("{} Exception caught during liking hashtag {}".format(datetime.now(),tag))
