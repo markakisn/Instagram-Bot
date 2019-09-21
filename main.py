@@ -152,9 +152,16 @@ class InstagramBot():
     def run_bot(self,tag_list):
         while True:
             for tag in tag_list:
-                self.search(tag,is_tag = True)
-                self.like_results(np.random.randint(17,25))
-            self.nonidle_break(np.random.randtint(378,798))
+                try:
+                    self.search(tag,is_tag = True)
+                    self.like_results(np.random.randint(17,25))                    
+                    self.nonidle_break(np.random.randtint(378,798))
+                except:
+                    self.go_home()
+                    time.sleep(np.random.randint(4,7))
+                    continue           
+                            
+            
 
 
     #presses the home button
