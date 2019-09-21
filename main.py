@@ -49,7 +49,7 @@ class InstagramBot():
         passwordInput.send_keys(self.password)
         passwordInput.send_keys(Keys.ENTER )
         time.sleep(np.random.randint(4,7))
-        notification_btn = WebDriverWait(self.browser, 10).until(
+        notification_btn = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//button[@class='aOOlW   HoLwm ']")
             )
@@ -60,7 +60,7 @@ class InstagramBot():
     #Uses the search bar to search for argument 'name' 
     def search(self,name,is_tag = False):
         print('{} Searching for: {}...'.format(datetime.now(),name))
-        searchbox = WebDriverWait(self.browser, 10).until(
+        searchbox = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//input[@placeholder='Search']")
             )
@@ -78,7 +78,7 @@ class InstagramBot():
 
     #Likes an already loaded post
     def like_media(self):
-        like_btn = WebDriverWait(self.browser, 10).until(
+        like_btn = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//button[@class='dCJp8 afkep _0mzm-']")
             )
@@ -100,7 +100,7 @@ class InstagramBot():
     #Proceeds to the next picture by pressing the right arrow
     #Element type is 'a' not 'button'
     def next_to_media(self):
-        next_btn = WebDriverWait(self.browser, 10).until(
+        next_btn = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//a[@class='HBoOv coreSpriteRightPaginationArrow']")
             )
@@ -113,7 +113,7 @@ class InstagramBot():
     #Uses random delay and random behaviour when exiting and nexting media
     #Likes a percentage of media seen (0.0-1.0)
     def like_results(self,numberOfLikes,percentage=0.85):
-        first_pic = WebDriverWait(self.browser, 10).until(
+        first_pic = WebDriverWait(self.browser, 40).until(
         EC.visibility_of_element_located(
             (By.XPATH, "//div[@class='_9AhH0']")
             )
@@ -122,11 +122,11 @@ class InstagramBot():
         
         counter = 0
         while counter < numberOfLikes:
-            time.sleep(np.random.randint(32,45))
+            time.sleep(np.random.randint(69,103))
             if(np.random.random_sample()<percentage):
                 self.like_media()
                 counter = counter + 1
-            time.sleep(np.random.randint(50,75)) 
+            time.sleep(np.random.randint(60,98)) 
             self.next_to_media()
 
         time.sleep(np.random.randint(3,5))
@@ -155,7 +155,7 @@ class InstagramBot():
                 try:
                     self.search(tag,is_tag = True)
                     self.like_results(np.random.randint(17,25))                    
-                    self.nonidle_break(np.random.randtint(378,798))
+                    self.nonidle_break(np.random.randtint(378,769))
                 except:
                     self.back_from_media()
                     self.go_home()
