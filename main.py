@@ -122,11 +122,11 @@ class InstagramBot():
         
         counter = 0
         while counter < numberOfLikes:
-            time.sleep(np.random.randint(69,103))
+            time.sleep(np.random.randint(205,456))
             if(np.random.random_sample()<percentage):
                 self.like_media()
                 counter = counter + 1
-            time.sleep(np.random.randint(60,98)) 
+            time.sleep(np.random.randint(345,456)) 
             self.next_to_media()
 
         time.sleep(np.random.randint(3,5))
@@ -155,7 +155,7 @@ class InstagramBot():
                 try:
                     self.search(tag,is_tag = True)
                     self.like_results(np.random.randint(17,25))                    
-                    self.nonidle_break(np.random.randtint(378,769))
+                    self.nonidle_break(np.random.randtint(456,986))
                 except:
                     try:
                         self.back_from_media()
